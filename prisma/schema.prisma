@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  password      String
+  role          String    @default("USER") // Options: ADMIN, MANAGER, USER
+  isVerified    Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  
+  // Relations
+  logs          AuditLog[]
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String   // e.g., "User logged in"
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}

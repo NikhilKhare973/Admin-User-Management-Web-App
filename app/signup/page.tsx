@@ -12,6 +12,7 @@ export default function SignupPage() {
     e.preventDefault();
     setError("");
 
+    // Basic client-side validation
     const res = await fetch("/api/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -35,6 +36,7 @@ export default function SignupPage() {
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
         <h1 className="text-2xl font-bold mb-6 text-center">Create Account</h1>
 
+        {/* error handle */}
         {error && (
           <div className="bg-red-100 text-red-600 p-2 mb-4 rounded text-sm">
             {error}

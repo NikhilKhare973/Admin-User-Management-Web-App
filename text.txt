@@ -2,4 +2,5 @@ run -  npm run dev
 http://localhost:3000
 
  cd galaxy-assignment
-npx prisma studio - http://localhost:51212/#table=User&schema=public&view=table
+npx prisma studio - 
+http://localhost:51212/#table=User&schema=public&view=table

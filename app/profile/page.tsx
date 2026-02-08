@@ -37,7 +37,7 @@ export default function ProfilePage() {
     }
   }
 
-  // 3. Logout Function --- it deletes the saved user data from your browser (localStorage.removeItem).
+  // 3. Logout Function --- it deletes the saved user data from your browser (localStorage.removeItem). logout button is clicked,
   function handleLogout() {
     localStorage.removeItem("user");
     router.push("/login");

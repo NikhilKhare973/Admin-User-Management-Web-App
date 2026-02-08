@@ -27,7 +27,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
-            [ Mission Image Placeholder ]
+            [ Mission Image Placeholder ]{/* photo add ^ */}
           </div>
         </div>
 
@@ -43,7 +43,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="flex-1 h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500">
-            [ Vision Image Placeholder ]
+            [ Vision Image Placeholder ]{/* photo add ^ */}
           </div>
         </div>
       </div>

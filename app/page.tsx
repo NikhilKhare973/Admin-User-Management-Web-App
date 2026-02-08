@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// this is the home page of the app.
 export default function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">

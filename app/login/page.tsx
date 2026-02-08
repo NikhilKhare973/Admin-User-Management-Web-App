@@ -1,7 +1,8 @@
-"use client";
+"use client"; // This is a Client Component because it uses useState and useRouter (which are client-side hooks)
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // This tool handles the redirect
 
+// This page is the login form. It sends the email and password to the API route we created earlier, and then redirects the user based on their role.
 export default function LoginPage() {
   const router = useRouter();
   const [form, setForm] = useState({ email: "", password: "" });
@@ -31,7 +32,7 @@ export default function LoginPage() {
     if (data.user.role === "ADMIN" || data.user.role === "MANAGER") {
       router.push("/dashboard"); // Admins go to Dashboard
     } else {
-      router.push("/"); // Normal Users go to Home (We will build a Profile page later)
+      router.push("/"); // Normal Users go to Home
     }
   }
 

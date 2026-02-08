@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma"; // This imports the file you created earlier
+import { prisma } from "@/lib/prisma"; // Import the Prisma client to interact with the database
 
+// This file defines the API routes for managing users. It supports GET, POST, PUT, and DELETE operations on the /api/users endpoint.
+
+//
 // 1. GET: Fetch all users
 export async function GET() {
   try {
@@ -35,8 +38,7 @@ export async function POST(request: Request) {
   }
 }
 
-// Add this at the bottom of app/api/users/route.ts
-
+// 3. DELETE: Delete a user by ID
 export async function DELETE(request: Request) {
   try {
     const { id } = await request.json(); // Get the ID from the request
@@ -49,8 +51,7 @@ export async function DELETE(request: Request) {
   }
 }
 
-// Add this inside app/api/users/route.ts
-
+// 4. PUT: Update a user by ID
 export async function PUT(request: Request) {
   try {
     const body = await request.json();

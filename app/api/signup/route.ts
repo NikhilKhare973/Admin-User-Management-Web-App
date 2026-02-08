@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
+// This is the API route for user signup. It expects a POST request with a JSON body containing the email and password.
+// POST - /api/signup
 export async function POST(request: Request) {
   try {
     const body = await request.json();

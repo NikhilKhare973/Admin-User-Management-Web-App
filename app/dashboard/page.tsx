@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
+// This is the main dashboard page where admins can manage users (create, edit, delete). It also includes a search bar to filter users by email.
 export default function Home() {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
@@ -41,7 +42,7 @@ export default function Home() {
   }
 
   async function handleSubmit(e: any) {
-    e.preventDefault();
+    e.preventDefault(); // Prevent page refresh on form submit
 
     // If we are editing, send a PUT request. If creating, send POST.
     const method = isEditing ? "PUT" : "POST";
@@ -156,6 +157,7 @@ export default function Home() {
       {/* User List */}
       <h2 className="text-xl font-semibold mb-4">Current Users</h2>
       <ul className="space-y-3">
+        {/* // We use filteredUsers here to show the search results. If searchTerm is empty, it will show all users, all so use map to loop all item */}
         {filteredUsers.map((user: any) => (
           <li
             key={user.id}

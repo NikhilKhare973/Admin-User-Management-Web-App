@@ -8,6 +8,8 @@ import "./globals.css";
 
 // The Next.js Way (layout.tsx + page.tsx) to create a NAVBAR that appears on ALL PAGES! <--- VERY IMPORTANT!
 
+// This RootLayout component wraps around all the pages in the app. It contains the navbar and also checks if the user is logged in by looking at localStorage.
+// Depending on the login status, it conditionally renders different links in the navbar (like Dashboard, My Profile, Logout for logged-in users and Login for guests).  The handleLogout function clears the user from localStorage and redirects to the login page.
 export default function RootLayout({
   children,
 }: {
